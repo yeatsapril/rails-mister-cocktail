@@ -1,0 +1,19 @@
+<div class="container"><h1>All doses for: <%= @ingredient.name %></h1></div>
+
+<ul class="list-group">
+  <% @ingredient.doses.each do |dose| %>
+    <div class="container">
+      <%= link_to edit_dose_path(dose.id) do %>
+        <li class="list-group-item active d-flex justify-content-between"><strong><%=@ingredient.name %></strong>
+        <span class="btn btn-dark ">Edit</span></li>
+      <% end %>
+        <li class="list-group-item"><em>Decription: <%=dose.description %> stars</em></li>
+        <li class="list-group-item btn btn-outline-dark"><%= link_to 'Delete this dose', dose_path(dose.id), method: :delete, data: { confirm: "Are you sure?" }%></li>
+        <br>
+    </div>
+  <% end %>
+</ul>
+
+<div class="container d-flex justify-content-between mt-4">
+  <div class="btn btn-outline-dark"><%= link_to 'Back to ingredient screen', ingredients_path %></div>
+</div>

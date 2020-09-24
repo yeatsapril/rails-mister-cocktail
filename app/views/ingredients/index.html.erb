@@ -1,0 +1,18 @@
+<div class="container"><h1>Pick your ingredient!</h1></div>
+
+<div class="alert alert-dark" role="alert"> <%= link_to 'Click here to add a new ingredient', new_ingredient_path, class: "alert-link" %> </div>
+  <div class="container">
+    <% @ingredients.each do |ingredient| %>
+      <div class="card">
+        <%= link_to new_ingredient_dose_path(ingredient['id']) do %>
+          <li class="list-group-item active d-flex justify-content-between"><strong><%=ingredient.name %></strong>
+          <span class="btn btn-dark ">Add dose</span></li>
+            <div class="container"><%= link_to 'See current doses', ingredient_doses_path(ingredient.id)%></div>
+            <div class="btn btn-outline-dark"><%= link_to 'Edit ingredient', edit_ingredient_path(ingredient.id)%></div>
+            <div class="btn btn-outline-dark"><%= link_to 'Delete this ingredient', ingredient_path(ingredient.id), method: :delete, data: { confirm: "Are you sure?" }%></div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

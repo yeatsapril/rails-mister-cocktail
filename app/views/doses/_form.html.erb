@@ -1,0 +1,5 @@
+<div class="container p-4"><%= simple_form_for([@ingredient, @dose]) do |form| %>
+  <%= form.input :description, placeholder: 'Type your dose..' %>
+  <%= form.submit action_name == 'new' ? 'save dose' : 'edit dose', class: "btn btn-success" %>
+  <% end %>
+</div>
