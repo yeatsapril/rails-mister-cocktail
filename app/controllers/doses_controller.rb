@@ -10,13 +10,13 @@ class DosesController < ApplicationController
 
   def new
     @dose = Dose.new
-    raise
   end
 
   def create
     @dose = Dose.new(dose_params)
     @dose.ingredient = @ingredient
     @dose.save
+        raise
 
     if @dose.save
       redirect_to ingredients_path
