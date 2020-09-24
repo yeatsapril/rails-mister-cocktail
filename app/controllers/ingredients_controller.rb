@@ -22,19 +22,9 @@ class IngredientsController < ApplicationController
 
   def edit; end
 
-  def update
-    if @ingredient.update(ingredient_params)
-      redirect_to ingredients_path
-    else
-      render :edit
-    end
-  end
+  def update; end
 
-  def destroy
-    @ingredient.destroy
-
-    redirect_to ingredients_path
-  end
+  def destroy; end
 
   private
 

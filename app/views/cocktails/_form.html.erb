@@ -1,5 +1,5 @@
 <div class="container p-4"><%= simple_form_for([@cocktail, @dose]) do |form| %>
-  <%= form.association :ingredient, as: :select, collection: Ingredient.all, prompt: 'Rum..' %>
+  <%= form.association :ingredient, as: :select, collection: Ingredient.all, prompt: 'Something tasty..' %>
   <%= form.input :description, placeholder: 'Just a splash..' %>
   <%= form.submit 'save cocktail', class: "btn btn-success" %>
   <% end %>

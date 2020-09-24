@@ -4,8 +4,7 @@
   <ul>
      <% @cocktail.doses.each do |dose| %>
       <li> <%= dose.description %> : <%= dose.ingredient_name %>
-      <span class="btn btn-dark "><%= link_to 'Edit', edit_cocktail_path(dose) %></span>
-      <span class="btn btn-dark"><%= link_to 'Delete this dose', dose_path(dose.id), method: :delete, data: { confirm: "Are you sure?" }%></span></li>
+      <span class="btn btn-dark"><%= link_to 'Delete', dose_path(dose.id), method: :delete, data: { confirm: "Are you sure?" }%></span></li>
     <% end %>
   </ul>
 </div>
