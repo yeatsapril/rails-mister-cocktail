@@ -4,9 +4,8 @@
   <div class="container">
     <% @cocktails.each do |cocktail| %>
       <div class="card">
-          <li class="list-group-item active d-flex justify-content-between"><strong><%=cocktail.name %></strong>
-          <div class="container"><%= link_to 'See ingredients', cocktail_path(cocktail.id)%></div>
-          <div class="btn btn-outline-dark"><%= link_to 'Edit cocktail', edit_cocktail_path(cocktail.id)%></div>
+          <li class="list-group-item active d-flex justify-content-between"><strong><%=cocktail.name %></strong></li>
+          <div class="btn bth-outline-dark"><%= link_to 'See ingredients', cocktail_path(cocktail.id)%></div>
           <div class="btn btn-outline-dark"><%= link_to 'Delete this cocktail', cocktail_path(cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></div>
       </div>
     <% end %>

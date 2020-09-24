@@ -1,2 +1,5 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<div class="container p-4"><%= simple_form_for(@cocktail) do |form| %>
+  <%= form.input :name, placeholder: 'Strawberry Daquiri..' %>
+  <%= form.submit action_name == 'new' ? 'save cocktail' : 'edit cocktail', class: "btn btn-success" %>
+  <% end %>
+</div>
