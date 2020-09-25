@@ -7,7 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Creating seeds.."
 Ingredient.create(name: "mango")
-Ingredient.create(name: "liquid ice")
+Ingredient.create(name: "papaya")
+Ingredient.create(name: "lemon")
+Ingredient.create(name: "thyme")
+Ingredient.create(name: "mint leaves")
+Ingredient.create(name: "bringbær juice")
+Ingredient.create(name: "whiskey")
+Ingredient.create(name: "vodka")
 Ingredient.create(name: "rum")
 
 puts "Seeding finished!"
