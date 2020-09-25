@@ -1,5 +1,6 @@
 <div class="container p-4"><%= simple_form_for(@cocktail) do |form| %>
   <%= form.input :name, placeholder: 'Strawberry Daquiri..' %>
+  <%= form.input :photo, as: :file %>
   <%= form.submit 'save cocktail', class: "btn btn-success" %>
   <% end %>
 </div>

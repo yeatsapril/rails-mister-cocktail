@@ -1,4 +1,9 @@
 <div class="container"><h1>Your Cocktails!</h1></div>
+<div class="container"><%= cl_image_tag("https://res.cloudinary.com/dwzhk2thi/image/upload/v1601029655/lx0w83f2r5imsyil1lo2.jpg",
+      width: 400, height: 300, crop: :fill) %></div>
+
+<div class="container"><%= cl_image_tag("https://res.cloudinary.com/dwzhk2thi/image/upload/v1601029655/lx0w83f2r5imsyil1lo2.jpg",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %></div>
 
 <div class="alert alert-dark" role="alert"> <%= link_to 'Click here to make a new cocktail', new_cocktail_path, class: "alert-link" %> </div>
   <div class="container">
