@@ -15,5 +15,7 @@ Ingredient.create(name: "bringbær juice")
 Ingredient.create(name: "whiskey")
 Ingredient.create(name: "vodka")
 Ingredient.create(name: "rum")
+Ingredient.create(name: "ice cubes")
+Ingredient.create(name: "vanilla")
 
 puts "Seeding finished!"
