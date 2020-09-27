@@ -11,7 +11,11 @@
     <div class="game">
       <div class="rank">1</div>
       <div class="front">
-        <%= cl_image_tag cocktail.photo.key, class: "thumbnail" %>
+        <% if cocktail.photo.attached? %>
+          <%= cl_image_tag cocktail.photo.key, class: "thumbnail" %>
+        <% else %>
+          <% image_url = 'https://source.unsplash.com/collection/962396/1600x900' + cocktail.name.gsub(" ", "%30") %>
+        <% end %>
         <h3 class="name"><%=cocktail.name %></h3>
         <div class="stats">
           <p class="viewers">4 Star</p>
@@ -35,7 +39,6 @@
     </div>
   <% end %>
 </div>
-
 
 
 
