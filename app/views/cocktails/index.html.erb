@@ -6,14 +6,33 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container d-flex justify-content-between">
   <% @cocktails.each do |cocktail| %>
-    <div class="card">
-        <li class="list-group-item active d-flex justify-content-between"><strong><%=cocktail.name %></strong></li>
-        <div class="container"><%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %></div>
-        <div class="btn bth-outline-dark"><%= link_to 'See ingredients', cocktail_path(cocktail.id)%></div>
-        <div class="btn btn-outline-dark"><%= link_to 'Delete this cocktail', cocktail_path(cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></div>
+    <div class="game">
+      <div class="rank">1</div>
+      <div class="front">
+        <%= cl_image_tag cocktail.photo.key, class: "thumbnail" %>
+        <h3 class="name"><%=cocktail.name %></h3>
+        <div class="stats">
+          <p class="viewers">4 Star</p>
+          <div class="streamers">Review</div>
+        </div>
       </div>
+      <div class="back">
+        <div class="streaming-info">
+          <% cocktail.doses.each do |dose| %>
+          <p class="game-stat"><%= dose.ingredient_name.upcase %></p>
+          <p class="game-stat"><%= dose.description.upcase %></p>
+          <% end %>
+        </div>
+         <div class="btn btn-outline-primary d-flex justify-content-center">
+            <%= link_to 'Delete', cocktail_path(cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%>
+        </div>
+      </div>
+      <div class="background-card">
+
+      </div>
+    </div>
   <% end %>
 </div>
 
