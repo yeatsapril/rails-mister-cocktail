@@ -1,19 +1,24 @@
-<div class="container"><h1>Your Cocktails!</h1></div>
-<div class="container"><%= cl_image_tag("https://res.cloudinary.com/dwzhk2thi/image/upload/v1601029655/lx0w83f2r5imsyil1lo2.jpg",
-      width: 400, height: 300, crop: :fill) %></div>
 
-<div class="container"><%= cl_image_tag("https://res.cloudinary.com/dwzhk2thi/image/upload/v1601029655/lx0w83f2r5imsyil1lo2.jpg",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %></div>
-
-<div class="alert alert-dark" role="alert"> <%= link_to 'Click here to make a new cocktail', new_cocktail_path, class: "alert-link" %> </div>
+<div class="jumbotron jumbotron-fluid main-banner">
   <div class="container">
-    <% @cocktails.each do |cocktail| %>
-      <div class="card">
-          <li class="list-group-item active d-flex justify-content-between"><strong><%=cocktail.name %></strong></li>
-          <div class="btn bth-outline-dark"><%= link_to 'See ingredients', cocktail_path(cocktail.id)%></div>
-          <div class="btn btn-outline-dark"><%= link_to 'Delete this cocktail', cocktail_path(cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></div>
-      </div>
-    <% end %>
+    <h1 class="display-4">Cocktails</h1>
+    <p class="lead">Make yourself some beverages..</p>
   </div>
 </div>
+
+<div class="container">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card">
+        <li class="list-group-item active d-flex justify-content-between"><strong><%=cocktail.name %></strong></li>
+        <div class="container"><%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %></div>
+        <div class="btn bth-outline-dark"><%= link_to 'See ingredients', cocktail_path(cocktail.id)%></div>
+        <div class="btn btn-outline-dark"><%= link_to 'Delete this cocktail', cocktail_path(cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%></div>
+      </div>
+  <% end %>
+</div>
+
+
+
+
+
 
