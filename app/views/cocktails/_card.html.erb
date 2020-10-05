@@ -1,0 +1,27 @@
+<div class="special-card">
+   <div class="rank">1</div>
+      <div class="front">
+        <% if cocktail.photo.attached? %>
+          <%= cl_image_tag cocktail.photo.key, class: "thumbnail" %>
+        <% else %>
+          <% image_url = 'https://source.unsplash.com/collection/962396/1600x900' + cocktail.name.gsub(" ", "%30") %>
+        <% end %>
+      <h3 class="name"><%=cocktail.name %></h3>
+      <div class="outer-stats">
+        <div class="outer-info">4 Star</div>
+        <div class="outer-info">Review</div>
+      </div>
+    </div>
+    <div class="back">
+      <div class="inner-info">
+        <% cocktail.doses.each do |dose| %>
+          <p class="inner-stat"><%= dose.ingredient_name.upcase %></p>
+          <p class="inner-stat"><%= dose.description.upcase %></p>
+        <% end %>
+      </div>
+      <div class="btn btn-outline-primary d-flex justify-content-center">
+        <%= link_to 'Delete', cocktail_path(cocktail.id), method: :delete, data: { confirm: "Are you sure?" }%>
+      </div>
+    </div>
+  <div class="background-card"></div>
+</div>

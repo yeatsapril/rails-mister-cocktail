@@ -2,13 +2,13 @@
   $br: .5em
 }
 
-.game {
+.special-card {
   position: relative;
   width: 12.5em;
   cursor: pointer;
 }
 
-.streamers {
+.outer-info {
   display: flex;
   text-align: center;
 
@@ -48,12 +48,12 @@ img {
     margin: .75em 0;
   }
 
-  .stats {
+  .outer-stats {
     display: flex;
     justify-content: space-between;
   }
 
-  .streamers img {
+  .outer-info img {
     border: 1px solid;
   }
 }
@@ -71,13 +71,13 @@ img {
   gap: 1.5em;
   transform: translateY(35%);
 
-  .streaming-info {
+  .inner-info {
     margin: 1em 0;
     columns: 2;
     column-rule: 1px solid rgba(0,0,0, .75);
   }
 
-  .game-stat {
+  .inner-stat {
     font-size: .75rem;
     text-align: center;
 
@@ -102,7 +102,7 @@ img {
   border-radius: .5em;
 }
 
-.game:hover {
+.special-card:hover {
   .rank {
     transform: translate(150%, -74%);
   }
@@ -111,10 +111,10 @@ img {
     transform: translateY(-30%) scale(.8);
 
     .name {
-      animation:gameName 250ms forwards;
+      animation:special-cardName 250ms forwards;
     }
 
-    .stats {
+    .outer-stats {
       opacity: 0;
     }
   }
@@ -137,7 +137,7 @@ img {
 
 }
 
-@keyframes gameName {
+@keyframes special-cardName {
   0% {
     text-align: left;
     opacity: 1;
